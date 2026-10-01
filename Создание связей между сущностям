@@ -1,0 +1,41 @@
+Список таблиц:
+
+Museum
+Hall
+Author
+Category
+Exhibit
+Exhibition
+ExhibitionExhibit
+
+Внешние ключи (FK)
+Hall → Museum
+Exhibit → Hall, Author, Category
+Exhibition → Museum
+ExhibitionExhibit → Exhibition, Exhibit
+
+Связи между таблицами:
+Museum 1 ─── N Hall
+
+Museum 1 ─── N Exhibition
+
+Hall 1 ─── N Exhibit
+
+Author 1 ─── N Exhibit
+
+Category 1 ─── N Exhibit
+
+Exhibition N ─── N Exhibit
+
+Связь Exhibition и Exhibit реализуется через промежуточную таблицу ExhibitionExhibit.
+
+Схема
+Museum
+ ├── Hall
+ │    └── Exhibit
+ │         ├── Author
+ │         └── Category
+ │
+ └── Exhibition
+      └── ExhibitionExhibit
+           └── Exhibit
